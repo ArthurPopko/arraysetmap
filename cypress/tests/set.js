@@ -88,7 +88,7 @@ describe('currencySet', () => {
     Теперь осталось добавить импорт этих функция в ваш тест.
     import {isSuperSet, intersection} from "../../../utils/helper" и совершим вызов данных функций.*/
 
-    it('currency sets ', () => {
+    it('Implementing basic set operations with sets', () => {
         cy.log('Implementing basic set operations with sets')
         let currencySet1 = new Set(['USD', 'EUR', 'RUR'])
         let currencySet2 = new Set(['BYN', 'EUR', 'PLN'])
