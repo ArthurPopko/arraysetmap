@@ -3,7 +3,7 @@ homework p.5
 ### Project Description ###
 
 This is an example of project based on Cypress.
-The project contains tests array and sets usage.
+The project contains examples of arrays and sets usage.
 1) set.js - Testing data in set.js for solving task 5 is generated randomly using chance library chance.pickone and chance.pickset.
 2) array.js - not solved yet.
 
@@ -66,10 +66,8 @@ To open it use the following command:
 npx cypress open
 ```
 In the Test Runner you will see the list of testing files. You may click any of them and execution
-tests within a single it would be started in a separate window. Pay attention that results recording
-and reports creation is not performed if you use the Test Runner. So, this option is mostly for
-development and issues investigation. For running all the scope you should better use other options.
-
+tests within a single it would be started in a separate window. In the particular case it's the best way to see the test perfomance.
+Press F12 in your browser and choose "console" tab to see the console log.
 #### 3. Reporting
 
 ##### 3.1 Results are loaded into the Cypress Dashboard
