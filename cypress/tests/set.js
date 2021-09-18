@@ -1,12 +1,13 @@
 /// <reference types="cypress" />
 import Chance from 'chance'
+import {isSuperSet, intersection, difference, union} from "../utils/helper"
 
 describe('currencySet', () => {
     beforeEach(() => {
     })
 
     it('currencySet', () => {
-        let currencySet = new Set();
+        let currencySet = new Set()
         currencySet.add('USD').add('EUR').add('BYN').add('RUR')
         console.log(currencySet)
 
@@ -70,5 +71,29 @@ describe('currencySet', () => {
             let quantity = chance.integer({min: 1, max: currencyArray.length - 1})
             console.log(chance.pickset(currencyArray, quantity));
         })
+    })
+            /*Задание 6
+            Работа с несколькими наборами. Имплементация кастомных функций. Добавьте отдельный блок it - будем работать
+            с несколькими наборами. Создайте несколько наборов с валютами. Пусть они частично дублируют некоторые значения.
+            Или вы можете работать с теми значениями, что в примере, то есть с числами, если вам пока так удобнее.
+            На данном шаге необходимо определить кастомные реализации для проверок:
+            isSuperset(set, subset)
+            union(setA, setB)
+            intersection(setA, setB)
+            difference(setA, setB)
+            Для этого добавим в проект папку utils. В ней создадим файл (пусть он называется helper.js)
+            В него поместим реализацию методов.
+            Теперь осталось добавить импорт этих функция в ваш тест.
+            import {isSuperSet, intersection} from "../../../utils/helper" и совершим вызов данных функций.*/
+
+    it('currency sets ', () => {
+        let currencySet1 = new Set(['USD', 'EUR', 'RUR'])
+        let currencySet2 = new Set(['BYN', 'EUR', 'PLN'])
+        let currencySet3 = new Set(['BLR', 'RUR'])
+
+        isSuperSet(currencySet1, currencySet2);   // => true
+        union(currencySet1, currencySet3);        // => Set [1, 2, 3, 4, 5, 6]
+        intersection(currencySet1, currencySet3); // => Set [3, 4]
+        difference(currencySet1, currencySet3);   // => Set [1, 2]
     })
 })
