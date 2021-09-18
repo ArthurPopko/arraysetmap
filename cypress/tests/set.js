@@ -91,9 +91,9 @@ describe('currencySet', () => {
         let currencySet2 = new Set(['BYN', 'EUR', 'PLN'])
         let currencySet3 = new Set(['BLR', 'RUR'])
 
-        isSuperSet(currencySet1, currencySet2);   // => true
-        union(currencySet1, currencySet3);        // => Set [1, 2, 3, 4, 5, 6]
-        intersection(currencySet1, currencySet3); // => Set [3, 4]
-        difference(currencySet1, currencySet3);   // => Set [1, 2]
+        console.log(isSuperSet(currencySet1, currencySet2));   // => false
+        console.log(union(currencySet1, currencySet3));        // => Set(4){'USD', 'EUR', 'RUR', 'BLR'}
+        console.log(intersection(currencySet1, currencySet3)); // => Set(1){'RUR'}
+        console.log(difference(currencySet1, currencySet3));   // => Set(2){'USD', 'EUR'}
     })
 })

@@ -5,7 +5,7 @@
     difference(setA, setB)*/
 
 export const isSuperSet = (set, subSet) => {
-    for (let elem of subset) {
+    for (let elem of subSet) {
         if (!set.has(elem)) {
             return false;
         }
@@ -23,7 +23,7 @@ export const union = (setA, setB) => {
 
 export const intersection = (setA, setB) => {
     let _intersection = new Set();
-    for (var elem of setB) {
+    for (let elem of setB) {
         if (setA.has(elem)) {
             _intersection.add(elem);
         }
