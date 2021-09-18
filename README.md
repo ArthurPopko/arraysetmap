@@ -68,6 +68,7 @@ npx cypress open
 In the Test Runner you will see the list of testing files. You may click any of them and execution
 tests within a single it would be started in a separate window. In the particular case it's the best way to see the test perfomance.
 Press F12 in your browser and choose "console" tab to see the console log.
+
 #### 3. Reporting
 
 ##### 3.1 Results are loaded into the Cypress Dashboard
