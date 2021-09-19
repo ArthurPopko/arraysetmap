@@ -33,12 +33,11 @@ describe('planetsArray', () => {
         Итак, стандартная имплементация по выводу значений из массива теперь должна включать вывод еще одного свойства.*/
         cy.log('solar system added')
         addSystem(planetsArray)
-        // printPlanets(planetsArray)
 
         /*Задание 3
         Добавьте в массив новый объект:
         {planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false}*/
-        // cy.log('new object')
+        cy.log('new object')
         planetsArray.push({planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false})
         printPlanets(planetsArray);
 
@@ -54,7 +53,5 @@ describe('planetsArray', () => {
     	printPlanets(getPlanetsWithDistance(planets, 5))*/
         cy.log('filterPrint')
         filterDistance(planetsArray)
-        // const result = planetsArray.filter(planet => planet.distance > 20)
-        // printPlanets(result)
     })
 })
