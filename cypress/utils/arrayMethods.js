@@ -9,8 +9,17 @@ export const printPlanets = (planetsArray) => {
 
 export const addSystem = (planetsArray) => {
     planetsArray.forEach((planet) => {
-        Object.assign(planet, {system: "solarSystem"})
+        Object.assign(planet, {solarSystem: true})
         console.log('Solar system added', planet);
     })
 
+}
+
+export const radiusSum = (planetsArray) => {
+    const initialValue = 0;
+    let sum = planetsArray.reduce(
+        (accumulator, currentValue) => accumulator + currentValue.radius,
+        initialValue
+    );
+    console.log(sum);
 }
