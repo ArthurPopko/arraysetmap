@@ -16,18 +16,16 @@ describe('planetsArray', () => {
             {name: "Neptune", radius: 24764, density: 1.64, distance: 30.07}
         ]
         let planetsCopy = []
+
         // FOR
         for (let i = 0; i < planets.length; i++) {
             planetsCopy.push(planets[i])
         }
         console.log(planetsCopy)
 
-        // for (let planet of planets) {
-        //     console.log(planet)}
+
         // FOR EACH
-        // let solarSys = planets.push()
-        // console.log(solarSys)
-        // solarSys.forEach(i => console.log(i))
+
 
         // MAP
     })
