@@ -5,7 +5,7 @@ homework p.5
 This is an example of project based on Cypress.
 The project contains examples of arrays and sets usage.
 1) set.js - Testing data in set.js for solving task 5 is generated randomly using chance library chance.pickone and chance.pickset.
-2) array.js - not solved yet.
+2) array.js - 4 tasks solved for now.
 
 ## 1. Prerequisites
 Before running test NodeJS >6.1.0 should be installed  at you environment:
