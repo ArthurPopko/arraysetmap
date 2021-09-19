@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import Chance from 'chance'
-import {isSuperSet, intersection, difference, union} from "../utils/helper"
+import {isSuperSet, intersection, difference, union} from "../utils/setMethods"
 
 describe('currencySet', () => {
     beforeEach(() => {
@@ -83,7 +83,7 @@ describe('currencySet', () => {
     union(setA, setB)
     intersection(setA, setB)
     difference(setA, setB)
-    Для этого добавим в проект папку utils. В ней создадим файл (пусть он называется helper.js)
+    Для этого добавим в проект папку utils. В ней создадим файл (пусть он называется setMethods.js)
     В него поместим реализацию методов.
     Теперь осталось добавить импорт этих функция в ваш тест.
     import {isSuperSet, intersection} from "../../../utils/helper" и совершим вызов данных функций.*/
