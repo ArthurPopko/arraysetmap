@@ -23,3 +23,8 @@ export const radiusSum = (planetsArray) => {
     );
     console.log(sum);
 }
+
+export const filterDistance = (planetsArray) => {
+    let result = planetsArray.filter(planet => planet.distance > 20)
+    printPlanets(result)
+}

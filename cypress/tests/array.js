@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import {addSystem, printPlanets, radiusSum} from "../utils/arrayMethods";
+import {addSystem, printPlanets, radiusSum, filterDistance} from "../utils/arrayMethods";
 
 
 describe('planetsArray', () => {
@@ -47,5 +47,14 @@ describe('planetsArray', () => {
         cy.log('sum radius of the planets')
         radiusSum(planetsArray)
 
+        /*Задание 5
+        Используя метод filter распечатайте только те планеты, расстояние до которых больше определенного значения,
+        например пяти. Реализация должна позволять делать однострочный вызов.
+    	cy.log("====Planets with distance > 5 ====")
+    	printPlanets(getPlanetsWithDistance(planets, 5))*/
+        cy.log('filterPrint')
+        filterDistance(planetsArray)
+        // const result = planetsArray.filter(planet => planet.distance > 20)
+        // printPlanets(result)
     })
 })
