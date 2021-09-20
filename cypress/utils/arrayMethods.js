@@ -41,7 +41,17 @@ export const deletePlanetByIndex = (planetsArray) => {
 }
 
 export const sortByRadius = (planetsArray) => {
-    printPlanets(planetsArray.sort(function (a, b) {
+    printPlanets(planetsArray.sort((a, b) => {
         return a.radius - b.radius
     }))
+}
+
+export const sortByName = (planetsArray) => {
+    printPlanets((planetsArray.sort((a, b) => {
+        if (a.name < b.name)
+            return -1;
+        if (a.name > b.name)
+            return 1;
+        return 0;
+    })));
 }
