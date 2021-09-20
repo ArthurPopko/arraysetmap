@@ -103,8 +103,4 @@ describe('planetsArray', () => {
             console.log(planetsArray.length);
         })
     })
-
-    it('Exchange autotest ', () => {
-
-    });
-})
+});
