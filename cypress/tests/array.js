@@ -11,9 +11,9 @@ import {
 
 describe('planetsArray', () => {
     before(() => {
-        cy.fixture('newPlanet').then(data => {
-            cy.wrap(data).as('newPlanet')
-        })
+        // cy.fixture('newPlanet').then(data => {
+        //     cy.wrap(data).as('newPlanet')
+        // })
     })
 
     it('planetsArray', () => {
@@ -26,7 +26,7 @@ describe('planetsArray', () => {
         Но дальше нужно этот способ вывод усовершенствовать. Этот способ не будет в полной мере работать,
         когда количество полей для planet увеличится.
         */
-        cy.log('printPlanets')
+        cy.log('PrintPlanets')
         let planetsArray = [
             {name: "Mercury", radius: 2440, density: 5.43, distance: 0.395},
             {name: "Venus", radius: 6052, density: 5.24, distance: 0.723},
@@ -43,14 +43,16 @@ describe('planetsArray', () => {
         /*Задание 2
         Добавьте свойство solarSystem для всех объектов в массива. Используйте метод map().
         Итак, стандартная имплементация по выводу значений из массива теперь должна включать вывод еще одного свойства.*/
-        cy.log('solar system added')
+        cy.log('Solar system added')
         addSystem(planetsArray)
 
         /*Задание 3
         Добавьте в массив новый объект:
         {planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false}*/
-        cy.get('@newPlanet').then((newPlanet) => {
-            cy.log('new object added')
+        // cy.get('@newPlanet').then((newPlanet) => {
+        cy.log('New object added')
+        cy.fixture('newPlanet').then(newPlanet => {
+            cy.log('New object added')
             planetsArray.push({
                 name: newPlanet.name,
                 radius: newPlanet.radius,
@@ -64,7 +66,7 @@ describe('planetsArray', () => {
 
             /*Задание 4
             Просуммируйте радиус всех планет, используя метод reduce.*/
-            cy.log('sum radius of the planets')
+            cy.log('Sum radius of the planets')
             radiusSum(planetsArray)
 
             /*Задание 5
@@ -72,27 +74,37 @@ describe('planetsArray', () => {
             например пяти. Реализация должна позволять делать однострочный вызов.
             cy.log("====Planets with distance > 5 ====")
             printPlanets(getPlanetsWithDistance(planets, 5))*/
-            cy.log('filterPrint by distance')
+            cy.log('FilterPrint by distance')
             filterDistance(planetsArray)
 
             /*Задание 6
             Удалите из массива данные по планете с именем SomeNewPlanet
             Используйте метод indexOf, чтобы найти нужную планету в массиве, и метода splice, чтобы удалить найденный элемент.*/
-            cy.log('delete someNewPlanet')
+            cy.log('Delete someNewPlanet')
             deletePlanetByIndex(planetsArray)
 
             /* Задание 7
              Реализуйте функцию, которая отсортирует планеты по радиусу (по убыванию или возрастанию на выбор).
              Используйте метод sort().*/
-            cy.log('sort planets by radius')
+            cy.log('Sort planets by radius')
             console.log('Planets are sorted by radius: ')
             sortByRadius(planetsArray)
 
             /*Задание 8
             Реализуйте функцию, которая отсортирует планеты по имени. Используйте метод sort().*/
-            cy.log('sort planets by name')
+            cy.log('Sort planets by name')
             console.log('Planets are sorted by name: ')
             sortByName(planetsArray)
+
+            /*Задание 9
+            Выведем в консоль длину массива (свойство length)*/
+            cy.log('Print array length')
+            console.log('The array length is: ')
+            console.log(planetsArray.length);
         })
     })
+
+    it('Exchange autotest ', () => {
+
+    });
 })
