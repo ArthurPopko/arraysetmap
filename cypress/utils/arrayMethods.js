@@ -30,3 +30,12 @@ export const filterDistance = (planetsArray) => {
     console.log('Filtered print by distance: ')
     printPlanets(result)
 }
+
+export const deletePlanetByIndex = (planetsArray) => {
+    let planetPos = planetsArray.map((e) => {
+        return e.name;
+    }).indexOf('SomeNewPlanet');
+    console.log(planetPos);
+    planetsArray.splice(planetPos, 1);
+    printPlanets(planetsArray)
+}

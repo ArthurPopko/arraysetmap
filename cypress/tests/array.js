@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
-import {addSystem, printPlanets, radiusSum, filterDistance} from "../utils/arrayMethods";
-
+import {addSystem, printPlanets, radiusSum, filterDistance, deletePlanetByIndex} from "../utils/arrayMethods";
 
 describe('planetsArray', () => {
     before(() => {
@@ -43,14 +42,16 @@ describe('planetsArray', () => {
         Добавьте в массив новый объект:
         {planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false}*/
         cy.get('@newPlanet').then((newPlanet) => {
-            cy.log('new object')
+            cy.log('new object added')
             planetsArray.push({
-                planet: newPlanet.planet,
+                name: newPlanet.name,
                 radius: newPlanet.radius,
                 density: newPlanet.density,
                 distance: newPlanet.distance,
                 solarSystem: newPlanet.solarSystem
             })
+            console.log('\r')
+            console.log('New planet was added')
             printPlanets(planetsArray);
 
             /*Задание 4
@@ -65,6 +66,14 @@ describe('planetsArray', () => {
             printPlanets(getPlanetsWithDistance(planets, 5))*/
             cy.log('filterPrint by distance')
             filterDistance(planetsArray)
+
+            /*Задание 6
+            Удалите из массива данные по планете с именем SomeNewPlanet
+            Используйте метод indexOf, чтобы найти нужную планету в массиве, и метода splice, чтобы удалить найденный элемент.*/
+            cy.log('delete someNewPlanet')
+            deletePlanetByIndex(planetsArray)
+
+
         })
     })
 })
