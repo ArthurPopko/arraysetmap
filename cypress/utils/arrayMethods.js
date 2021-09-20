@@ -39,3 +39,9 @@ export const deletePlanetByIndex = (planetsArray) => {
     planetsArray.splice(planetPos, 1);
     printPlanets(planetsArray)
 }
+
+export const sortByRadius = (planetsArray) => {
+    printPlanets(planetsArray.sort(function (a, b) {
+        return a.radius - b.radius
+    }))
+}

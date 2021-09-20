@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import {addSystem, printPlanets, radiusSum, filterDistance, deletePlanetByIndex} from "../utils/arrayMethods";
+import {addSystem, printPlanets, radiusSum, filterDistance, deletePlanetByIndex, sortByRadius} from "../utils/arrayMethods";
 
 describe('planetsArray', () => {
     before(() => {
@@ -73,6 +73,12 @@ describe('planetsArray', () => {
             cy.log('delete someNewPlanet')
             deletePlanetByIndex(planetsArray)
 
+           /* Задание 7
+            Реализуйте функцию, которая отсортирует планеты по радиусу (по убыванию или возрастанию на выбор).
+            Используйте метод sort().*/
+            cy.log('sort planets by radius')
+            console.log('Planets are sorted by radius: ')
+            sortByRadius(planetsArray)
 
         })
     })
