@@ -3,6 +3,11 @@ import {addSystem, printPlanets, radiusSum, filterDistance} from "../utils/array
 
 
 describe('planetsArray', () => {
+    before(() => {
+        cy.fixture('newPlanet').then(data => {
+            cy.wrap(data).as('newPlanet')
+        })
+    })
 
     it('planetsArray', () => {
 
@@ -37,21 +42,29 @@ describe('planetsArray', () => {
         /*Задание 3
         Добавьте в массив новый объект:
         {planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false}*/
-        cy.log('new object')
-        planetsArray.push({planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false})
-        printPlanets(planetsArray);
+        cy.get('@newPlanet').then((newPlanet) => {
+            cy.log('new object')
+            planetsArray.push({
+                planet: newPlanet.planet,
+                radius: newPlanet.radius,
+                density: newPlanet.density,
+                distance: newPlanet.distance,
+                solarSystem: newPlanet.solarSystem
+            })
+            printPlanets(planetsArray);
 
-        /*Задание 4
-        Просуммируйте радиус всех планет, используя метод reduce.*/
-        cy.log('sum radius of the planets')
-        radiusSum(planetsArray)
+            /*Задание 4
+            Просуммируйте радиус всех планет, используя метод reduce.*/
+            cy.log('sum radius of the planets')
+            radiusSum(planetsArray)
 
-        /*Задание 5
-        Используя метод filter распечатайте только те планеты, расстояние до которых больше определенного значения,
-        например пяти. Реализация должна позволять делать однострочный вызов.
-    	cy.log("====Planets with distance > 5 ====")
-    	printPlanets(getPlanetsWithDistance(planets, 5))*/
-        cy.log('filterPrint')
-        filterDistance(planetsArray)
+            /*Задание 5
+            Используя метод filter распечатайте только те планеты, расстояние до которых больше определенного значения,
+            например пяти. Реализация должна позволять делать однострочный вызов.
+            cy.log("====Planets with distance > 5 ====")
+            printPlanets(getPlanetsWithDistance(planets, 5))*/
+            cy.log('filterPrint by distance')
+            filterDistance(planetsArray)
+        })
     })
 })
