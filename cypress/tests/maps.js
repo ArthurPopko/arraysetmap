@@ -72,11 +72,13 @@ describe('planetsMap', () => {
             Пройдите по значения множества и осуществите проверку, существует ли планета с данным ключом в Map().
             Чтобы проверить, что в Map существует элемент с заданным ключом, используется метод has().*/
 
-            let setPlanets = new Set()
+            let setPlanet = new Set(['Mercury','Not Mercury'])
 
-            setPlanets.add(mapPlanet.get('Mercury'))
-            console.log(setPlanets)
+            setPlanet.forEach((name) => {
+                cy.log('The map of planets has "' + name + '" key: ' + mapPlanet.has(name));
 
+
+            })
         })
     })
 })
