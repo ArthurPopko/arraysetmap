@@ -46,13 +46,8 @@ describe('planetsArray', () => {
             cy.log('New object added')
             cy.fixture('newPlanet').then(newPlanet => {
                 cy.log('New object added')
-                planetsArray.push({
-                    name: newPlanet.name,
-                    radius: newPlanet.radius,
-                    density: newPlanet.density,
-                    distance: newPlanet.distance,
-                    solarSystem: newPlanet.solarSystem
-                })
+                planetsArray.push(newPlanet)
+
                 console.log('\r')
                 console.log('New planet was added')
                 printPlanets(planetsArray);
