@@ -25,9 +25,3 @@ setPlanet.forEach((name) => {
     console.log(name +':', mapPlanet.has(name));
 })
 
-// mapPlanet.forEach((planet, name) => {
-//     console.log(name, planet);
-// })
-
-// console.log(setPlanet);
-// console.log(mapPlanet);
