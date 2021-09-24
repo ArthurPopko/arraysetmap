@@ -17,11 +17,5 @@ Planets.forEach((planet) => {
     delete a ['name']
     mapPlanet.set(planet.name, a)
 })
-// console.log(mapPlanet);
 
-let setPlanet = new Set(['Mercury','Not Mercury'])
-
-setPlanet.forEach((name) => {
-    console.log(name +':', mapPlanet.has(name));
-})
-
+console.log(mapPlanet);
