@@ -20,9 +20,9 @@ describe('Age by chance', () => {
             cy.log('You are a child.')
         } else if (age < 20) {
             cy.log('You are a teenager.')
-        } else if (age <= 60) {
+        } else if (age < 60) {
             cy.log('You\'re an adult.')
-        } else if (age <= 90) {
+        } else if (age < 90) {
             cy.log('You\'re a senior')
         } else
             cy.log('Congratulation! You\'re a longliver!')
@@ -33,13 +33,13 @@ describe('Age by chance', () => {
             case (age < 13):
                 cy.log('You are a child.');
                 break;
-            case (age <= 19):
+            case (age < 20):
                 cy.log('You are a teen.');
                 break;
             case (age < 60):
                 cy.log('You are an adult.');
                 break;
-            case (age <= 90):
+            case (age < 90):
                 cy.log('You\'re a senior.');
                 break;
             default:
