@@ -9,11 +9,12 @@ let Planets =
         {"name": "Uranus", "radius": 25559, "density": 1.27, "distance": 19.213},
         {"name": "Neptune", "radius": 24764, "density": 1.64, "distance": 30.07}
     ]
-
+// console.log(Planets);
 let mapPlanet = new Map()
 
 Planets.forEach((planet) => {
     let a = Object.assign({}, planet)
+    // console.log(planet);
     delete a ['name']
     mapPlanet.set(planet.name, a)
 })

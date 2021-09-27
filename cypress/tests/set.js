@@ -69,7 +69,7 @@ describe('currencySet', () => {
         let currencyArray = [...currencySet]
         console.log(currencyArray)
         console.log(chance.pickone(currencyArray))
-        // usage
+
         let quantity = chance.integer({min: 1, max: currencyArray.length - 1})
         console.log(chance.pickset(currencyArray, quantity));
     })

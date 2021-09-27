@@ -1,13 +1,4 @@
 /// <reference types="cypress" />
-// import {
-//     addSystem,
-//     printPlanets,
-//     radiusSum,
-//     filterDistance,
-//     deletePlanetByIndex,
-//     sortByRadius,
-//     sortByName
-// } from "../utils/arrayMethods";
 
 import {printMapPlanets} from "../utils/mapMethods";
 
