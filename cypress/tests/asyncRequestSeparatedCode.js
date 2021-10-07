@@ -1,17 +1,16 @@
+// import {printItemInfo} from "../utils/asyncDisplayMethod";
+
 import {printItemInfo} from "../utils/asyncDisplayMethod";
 
-describe('async request. code and request in "it" ', () => {
-    beforeEach(() => {
+describe('Async request. code is separated.', () => {
+    before(() => {
+        cy.log('Get products list array:')
+        cy.request('GET', '/').its('body').as("products")
     })
 
-    it('async request products list length. not optimised', () => {
-        cy.log('Get product list length from fixture')
-        cy.request('GET', '/').then((response) => {
-            cy.log('Put json response in: ')
-            cy.writeFile('cypress/fixtures/productList.json', response.body)
-        })
+    it('Async request products list length. Product list in before.', () => {
+        cy.get("@products").then(productList => {
 
-        cy.fixture('productList').then((productList) => {
             cy.log('The products amount is: ' + productList['products'].length);
 
             cy.log('The 1st product info is displayed in console')
