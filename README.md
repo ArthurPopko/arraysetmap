@@ -8,6 +8,7 @@ The project contains examples of arrays, sets and maps usage.
 2) array.js - 9 tasks solved.
 3) map.js - 8 tasks solved.
 4) ifElseSwitchTern.js - solved.
+5) async request - solved.
 
 ## 1. Prerequisites
 Before running test NodeJS >6.1.0 should be installed  at you environment:

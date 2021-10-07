@@ -1,4 +1,5 @@
 {
+  "baseUrl": "https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1633586445",
   "integrationFolder": "cypress/tests",
   "projectId": "hkjmbo"
 }

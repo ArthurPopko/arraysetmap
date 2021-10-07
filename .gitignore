@@ -2,3 +2,4 @@
 /.idea/
 /cypress/integration/
 /cypress/videos/
+/cypress/fixtures/productList.json
